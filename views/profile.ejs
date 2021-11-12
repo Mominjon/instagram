@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>instagram/profile</title>
+    <link rel="icon" href="https://play-lh.googleusercontent.com/h9jWMwqb-h9hjP4THqrJ50eIwPekjv7QPmTpA85gFQ10PjV02CoGAcYLLptqd19Sa1iJ">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+    <header>
+
+        <div class="container">
+    
+            <div class="profile">
+    
+                <div class="profile-image">
+    
+                    <img src="/img/<%= data.data[0].username%>.png" alt="">
+    
+                </div>
+    
+                <div class="profile-user-settings">
+    
+                    <h1 class="profile-user-name"><%= data.data[0].full_name%></h1>
+    
+                    <button class="btn profile-edit-btn">Edit Profile</button>
+    
+                    <button class="btn profile-settings-btn" aria-label="profile settings"><i class="fas fa-cog" aria-hidden="true"></i></button>
+    
+                </div>
+    
+                <div class="profile-stats">
+    
+                    <ul>
+                        <li><span class="profile-stat-count"><%= data.data[0].media_count%></span> posts</li>
+                        <li><span class="profile-stat-count"><%= data.data[0].follower_count%></span> followers</li>
+                        <li><span class="profile-stat-count"><%= data.data[0].following_count%></span> following</li>
+                    </ul>
+    
+                </div>
+    
+                <div class="profile-bio">
+    
+                    <p><span class="profile-real-name"><%= data.data[0].biography%></p>
+    
+                </div>
+    
+            </div>
+            <!-- End of profile section -->
+    
+        </div>
+        <!-- End of container -->
+    
+    </header>
+    
+    <main>
+    w
+        <div class="container">
+            <div class="gallery">
+                <% data.data[0].feed.data.map((elem) => { %>
+                    <div class="gallery-item" tabindex="0" >
+                        <img class="modal" width="285" height="270" src="/img/<%= elem.client_cache_key%>.jpg" alt="">
+                        <div class="gallery-item-info" data-uuid="<%=elem.client_cache_key%>" onclick="">
+                            <ul>
+                                <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i><%= elem.like_count%></li>
+                                <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i><%= elem.comment_count%></li>
+                            </ul>
+                        </div>
+                    </div>
+                <%})%>
+            </div>
+            <!-- End of gallery -->
+        </div>
+        <!-- End of container -->
+    
+    </main>
+    <script src="https://kit.fontawesome.com/9387b47960.js" crossorigin="anonymous"></script>
+    <script>
+        
+        let modalbutton = document.querySelectorAll(".gallery-item-info")
+        for(let i = 0; i< modalbutton.length; i++){
+            modalbutton[i].addEventListener("click", (e) => {
+            let element = e.target.dataset.uuid
+            // let x = data.find((e) => filmid == e.id)
+            console.log(data)
+        })
+        }
+    </script>
+</body>
+</html>

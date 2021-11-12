@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>instagram/login</title>
+    <link rel="icon" href="https://play-lh.googleusercontent.com/h9jWMwqb-h9hjP4THqrJ50eIwPekjv7QPmTpA85gFQ10PjV02CoGAcYLLptqd19Sa1iJ">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    
+    <div id="login-button">
+        <img src="https://dqcgrsy5v35b9.cloudfront.net/cruiseplanner/assets/img/icons/login-w-icon.png">
+        </img>
+      </div>
+      <div id="container">
+        <h1>Log In</h1>
+        <span class="close-btn">
+          <img src="https://cdn4.iconfinder.com/data/icons/miu/22/circle_close_delete_-128.png"></img>
+        </span>
+      
+        <form>
+            <input type="text" class="usernaem" name="userName" placeholder="instagram user-name">
+            <button type="button" class="orange-btn">Summbit</button>
+        </form>
+      </div>
+      
+      <!-- Forgotten Password Container -->
+      <script src="/js/main.js"></script>
+      <script>
+          $('#login-button').click(function(){
+        $('#login-button').fadeOut("slow",function(){
+            $("#container").fadeIn();
+        });
+        });
+        /* Forgotten Password */
+        $('#forgotten').click(function(){
+        $("#container").fadeOut(function(){
+            $("#forgotten-container").fadeIn();
+        });
+        });
+      </script>
+</body>
+</html>
