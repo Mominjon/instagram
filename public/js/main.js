@@ -9,7 +9,6 @@ myHeaders.append("Content-Type", "application/json");
 
 button.addEventListener("click", (e) => {
     e.preventDefault()
-    console.log("Asddasds")
     fetch(`https://instagram-bulk-profile-scrapper.p.rapidapi.com/clients/api/ig/ig_profile?ig=${input.value}&response_type=json&corsEnabled=false`, {
         "method": "GET",
         "headers": {
